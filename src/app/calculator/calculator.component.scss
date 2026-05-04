@@ -1,0 +1,26 @@
+.calculator {
+    background-color: rgba(128, 128, 128, 0.274);
+    width: 250px;
+    margin: 50px auto;
+    text-align: center;
+    padding: 10px;
+}
+
+input {
+    text-align: right;
+    font-size: 18px;
+    width: 90%;
+    height: 40px;
+    margin-bottom: 20px;
+    background-color: lightcyan;
+}
+
+button {
+    width: 50px;
+    height: 44px;
+    margin: 2px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: greenyellow;
+    color: black
+}
