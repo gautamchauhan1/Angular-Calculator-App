@@ -20,10 +20,18 @@ export class CalculatorComponent {
   onOperatorClick(op: string) {
     if (this.currentValue === '' && this.expression === '') return;
 
+    //if multiple operator press
+    if(this.currentValue ===''){
+      this.expression = this.expression.slice(0, -3);
+      this.expression = this.expression + ' ' + op + ' ';
+      this.operator = op;
+      return
+    }
+
     this.firstValue = Number(this.currentValue);
     this.operator = op;
     this.currentValue = '';
-    this.expression = this.expression + '' + op + '';
+    this.expression = this.expression + ' ' + op + ' ';
   }
 
   calculate() {
@@ -44,6 +52,26 @@ export class CalculatorComponent {
     this.expression = this.currentValue;
   }
 
+  backspace() {
+
+  if (this.expression === '') return;
+
+  // last 3 characters check karo
+  let lastThree = this.expression.slice(-3);
+
+  // operator case ( " + ", " - ", " * ", " / " )
+  if (lastThree === ' + ' || lastThree === ' - ' || lastThree === ' * ' || lastThree === ' / ') {
+    this.expression = this.expression.slice(0, -3);
+    this.operator = '';
+  } else {
+    // normal number delete (only 1 char)
+    this.expression = this.expression.slice(0, -1);
+  }
+
+  // update currentValue
+  let parts = this.expression.split(' ');
+  this.currentValue = parts[parts.length - 1] || '';
+}
   clear() {
     this.currentValue = '';
     this.firstValue = 0;
