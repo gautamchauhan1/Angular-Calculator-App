@@ -56,7 +56,7 @@ export class CalculatorComponent {
 
   if (this.expression === '') return;
 
-  // last 3 characters check karo
+  // check last 3 characters
   let lastThree = this.expression.slice(-3);
 
   // operator case ( " + ", " - ", " * ", " / " )
