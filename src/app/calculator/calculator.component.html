@@ -1,26 +1,29 @@
 <div class="calculator">
-    <input type="text" [value]="expression" readonly>
+  <input type="text" [value]="expression" readonly />
 
-    <div class="buttons">
-        <button (click)="clear()">C</button>
-        <button (click)="backspace()">⌫</button>
-        
-        <button (click)="onOperatorClick('/')">/</button>
-        <button (click)="onOperatorClick('*')">*</button>
-        <button (click)="onOperatorClick('-')">-</button>
+  <div class="buttons">
 
-        <button (click)="onNumberClick('9')">9</button>
-        <button (click)="onNumberClick('8')">8</button>
-        <button (click)="onNumberClick('7')">7</button>
-        <button (click)="onOperatorClick('+')">+</button>
-        <button (click)="onNumberClick('6')">6</button>
-        <button (click)="onNumberClick('5')">5</button>
-        <button (click)="onNumberClick('4')">4</button>
-        <button (click)="calculate()">=</button>
-        <button (click)="onNumberClick('3')">3</button>
-        <button (click)="onNumberClick('2')">2</button>
-        <button (click)="onNumberClick('1')">1</button>
-        <button (click)="onNumberClick('0')">0</button>
+    <button class="btn operator" (click)="clear()">C</button>
+    <button class="btn operator" (click)="backspace()">⌫</button>
+    <button class="btn operator" (click)="onOperatorClick('/')">/</button>
+    <button class="btn operator" (click)="onOperatorClick('*')">*</button>
 
-    </div>
+    <button class="btn" (click)="onNumberClick('7')">7</button>
+    <button class="btn" (click)="onNumberClick('8')">8</button>
+    <button class="btn" (click)="onNumberClick('9')">9</button>
+    <button class="btn operator" (click)="onOperatorClick('-')">-</button>
+
+    <button class="btn" (click)="onNumberClick('4')">4</button>
+    <button class="btn" (click)="onNumberClick('5')">5</button>
+    <button class="btn" (click)="onNumberClick('6')">6</button>
+    <button class="btn operator" (click)="onOperatorClick('+')">+</button>
+
+    <button class="btn" (click)="onNumberClick('1')">1</button>
+    <button class="btn" (click)="onNumberClick('2')">2</button>
+    <button class="btn" (click)="onNumberClick('3')">3</button>
+    <button class="btn equal" (click)="calculate()">=</button>
+
+    <button class="btn zero" (click)="onNumberClick('0')">0</button>
+
+  </div>
 </div>
